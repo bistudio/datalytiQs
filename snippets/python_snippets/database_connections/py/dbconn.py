@@ -1,18 +1,19 @@
 import sqlalchemy as sa
 from sqlalchemy import text
 
-""" server="DESKTOP-997DT33\\SQL2019"
-database="DATALYTIQS"
-username="datalytiQs_user"
-pwd="$Getgood7!"
-driver="SQL Server" """
-
 ## Create a connection to a sql server database
 
-def get_db_connection(server, database, username, pwd, driver):
+def get_db_connection(db_type, server, database, port, username, pwd, driver, sid):
     try:
-        db_connection_string = f'mssql+pyodbc://{username}:{pwd}@{server}/{database}?driver={driver}'
-        db_connection = sa.create_engine(db_connection_string)
+        if db_type == "sqlserver":
+            db_connection_string = f'mssql+pyodbc://{username}:{pwd}@{server}/{database}?driver={driver}'
+            db_connection = sa.create_engine(db_connection_string)
+        elif db_type == "oracle":
+            db_connection_string = f'oracle://{username}:{pwd}@{server}:{port}/{sid}'
+            db_connection = sa.create_engine(db_connection_string)
+            print("No database connection found")
+        else:
+            raise Exception("No database connection found")
         return db_connection
     except Exception as e:
         print(e)
