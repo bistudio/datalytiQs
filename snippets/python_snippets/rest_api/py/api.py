@@ -2,12 +2,10 @@ import requests as req
 from dbconn import get_db_connection
 from sqlalchemy import text
 
-
-
 ## initiate a connection to the database
 
 def sql_engine():
-    db_type="sqlserver" ##"sqlserver" or "oracle"
+    db_type="oracle" ##"sqlserver" or "oracle"
     sql_host = "DESKTOP-997DT33\\SQL2019"
     oracle_host = "localhost"
     sql_port = 1433
@@ -62,7 +60,6 @@ def get_api_data():
         print("Data inserted successfully")
     except Exception as e:
         print(e)
-
 
 if __name__ == "__main__":
     get_api_data()
