@@ -1,0 +1,27 @@
+
+
+COALESCE(
+
+IF(POAP[Milestone Status] = "Complete"  && POAP[Milestone Date] >= last30Date && ABS(DATEDIFF(todayDate, POAP[Milestone Date], DAY)) <= 30, "Completed in last 30 days"
+
+,IF(POAP[Milestone Status] = "Complete"  && ABS(DATEDIFF(todayDate, POAP[Milestone Date], DAY)) > 30, "Other Completed"
+
+,IF(DATEDIFF(todayDate, POAP[Milestone Date], DAY) > 0
+
+,IF(DATEDIFF(todayDate, POAP[Milestone Date], DAY) <= 30 , "due in 30 days"
+
+,IF(DATEDIFF(todayDate, POAP[Milestone Date], DAY) <= 60 , "due in 60 days"
+
+,IF(DATEDIFF(todayDate, POAP[Milestone Date], DAY) <= 90 , "due in 90 days"
+
+,IF(DATEDIFF(todayDate, POAP[Milestone Date], DAY) > 90 , "due in over 90 days")))))))
+
+, "Overdue")
+
+
+
+
+
+
+
+=IF(AND(M2="Complete",ABS(N2-R2)<=30),"Completed in last 30 days",IF(AND(M2="Complete",ABS(N2-R2)>30),"Other Completed",IF((N2-R2)<0,"Overdue",IF(AND((N2-R2)<=30,N2-R2>0),"due in 30 days",IF(AND((N2-R2)<=60,N2-R2>0),"due in 60 days",IF(AND((N2-R2)<=90,N2-R2>0),"due in 90 days", "due in over 90 days"))))))
