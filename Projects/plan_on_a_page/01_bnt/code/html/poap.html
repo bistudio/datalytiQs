@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Plan on a Page | Milestone Tracker</title>
+	<script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+	<link rel="icon" href="data:;base64,iVBORwOKGO="/>
+</head>
+<body>
+	<div id="container">
+		<header id="header">Plan on a Page <span fill="silver">|</span> Milestone Tracker</header>
+		<div id="towerContainer"></div>
+		<main id="swimLanes"></main>
+		<footer id="nomenclature"></footer>
+		<table class="filterContainer">
+			<tr>
+				<td>
+					<label>Tower</label>
+					<br/>
+					<select multiple id="twr" name="tower" class="dropdown">
+						<option value="all" selected>Select All</option>
+					</select>
+				</td>
+				<td>
+					<label>Task Owner</label>¿Niños niñas
+					<br/>
+					<select multiple id="rsName" name="resourceName" class="dropdown">
+						<option value="all" selected>Select All</option>
+					</select>
+				</td>
+				<td>
+					<label>Milestone Level</label>
+					<br/>
+					<select multiple id="ml" name="milestoneLevel" class="dropdown">
+						<option value="all" selected>Select All</option>
+					</select>
+				</td>
+				<td>
+					<label>Milestone Status</label>
+					<br/>
+					<select multiple id="ms" name="milestoneStatus" class="dropdown">
+						<option value="all" selected>Select All</option>
+					</select>
+				</td>
+				<td>
+					<label>Milestone Due</label>
+					<br/>
+					<select multiple id="md" name="milestoneDue" class="dropdown">
+						<option value="all" selected>Select All</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+
+		// create empty dataset array
+
+		let dataset = [];
+		let datasetGrouping = [];
+		let menudata = [];
+
+		// defiine all dimensions and variables
+
+		let towerObjArr = [];
+		let tower ;
+		let dataObjectCount;
+		let resourceNameObjArr = [];
+		let resourceName ;
+		let milestoneDueObjArr = [];
+		let milestoneDue ;
+		let milestoneLevelObjArr = [];
+		let milestoneLevel ;
+		let milestoneStatusObjArr = [];
+		let milestoneStatus ;
+		const width = 1080;
+		const height = 960;
+		const towerWidth = 200;
+		const towerPadding = 5;
+		const swimLanesWidth = width - towerWidth;
+		let reportDates = [];
+		let totalCount ;
+		const animateDelay = 500;
+		const animateDuration = 1000;
+
+		// enumerate drop down select boxes
+
+		let twrDropDown = document.getElementById("twr");
+		let rsNameDropDown = document.getElementById("rsName");
+		let mlDropDown = document.getElementById("ml");
+		let msDropDown = document.getElementById("ms");
+		let mdDropDown = document.getElementById("md");
+		
+		// load required data
+
+		d3.json("../../data/POAP.json").then(function(data, error){
+
+			if (error){
+				console.log("Please check data file!")
+			}
+				else{
+					console.log("data loaded correctly!");
+			}
+
+		// convert date strings to proper date for use later
+
+			data.forEach(function (el) {
+						var startDate = new Date(el['Start']);
+						var endDate = new Date(el['Finish']);
+						el["Start Date"] = startDate;
+						el["End Date"] = endDate;
+						el["Current Date"] = new Date();
+					})
+
+			// add unique identifier to control visual Y scale
+			
+			for (d=0; d<data.length; d++) {
+				 data[d]["Unique Id"] = d+1;
+				 }
+	
+
+			// data for the drop down select menus for user input
+			menudata = data;
+			// data for visual
+			//dataset = data.filter(function(d) {return d.Tower == "Service Desk"} );
+			dataset = data;
+			totalCount = dataset.length;
+
+			// create dimension array ; tower, resource name, milestone due, milestone level, milestone status
+			
+			for (i=0; i<menudata.length; i++) {
+				towerObjArr.push({"tower":menudata[i].Tower, "towerRag":menudata[i]['Tower Rag']})
+				resourceNameObjArr.push({"resourceName":menudata[i]['Resource Names']})
+				milestoneDueObjArr.push({"milestoneDue":menudata[i]['Milestone Due']})
+				milestoneLevelObjArr.push({"milestoneLevel":menudata[i]['Milestone Level Name']})
+				milestoneStatusObjArr.push({"milestoneStatus":menudata[i]['Milestone Status']})
+			}
+			
+			//create de-duplicator function use this for array
+
+			function removeDuplicates(value, index, self)
+							{ 
+								return self.indexOf(value) === index 
+							}
+
+			//create de-duplicator function use this for object array
+
+			tower = [...new Map(towerObjArr.map(item => [item['tower'] , item])).values()];
+			resourceName = [...new Map(resourceNameObjArr.map(item => [item['resourceName'] , item])).values()].map(item => item['resourceName']).sort();
+			milestoneDue = [...new Map(milestoneDueObjArr.map(item => [item['milestoneDue'], item])).values()].map(item => item['milestoneDue']).sort();
+			milestoneLevel = [...new Map(milestoneLevelObjArr.map(item => [item['milestoneLevel'], item])).values()].map(item => item['milestoneLevel']).sort();
+			milestoneStatus = [...new Map(milestoneStatusObjArr.map(item => [item['milestoneStatus'], item])).values()].map(item => item['milestoneStatus']).sort();
+
+			// populate tower drop down box
+
+			for (twr=0; twr<tower.length; twr++){
+				var opt = tower[twr]['tower'];
+				var el = document.createElement('option');
+				el.textContent = opt;
+				el.value = opt;
+				twrDropDown.appendChild(el);
+			}
+
+			// populate task owner drop down box
+
+			for (rsName=0; rsName<resourceName.length; rsName++){
+				var opt = resourceName[rsName];
+				var el = document.createElement('option');
+				el.textContent = opt;
+				el.value = opt;
+				rsNameDropDown.appendChild(el);
+			}
+
+			// populate milestone level drop down box
+
+			for (ml=0; ml<milestoneLevel.length; ml++){
+				var opt = milestoneLevel[ml];
+				var el = document.createElement('option');
+				el.textContent = opt;
+				el.value = opt;
+				mlDropDown.appendChild(el);
+			}
+			
+			// populate milestone status drop down box
+
+			for (ms=0; ms<milestoneStatus.length; ms++){
+				var opt = milestoneStatus[ms];
+				var el = document.createElement('option');
+				el.textContent = opt;
+				el.value = opt;
+				msDropDown.appendChild(el);
+			}
+						
+			// populate milestone due drop down box
+
+			for (md=0; md<milestoneDue.length; md++){
+				var opt = milestoneDue[md];
+				var el = document.createElement('option');
+				el.textContent = opt;
+				el.value = opt;
+				mdDropDown.appendChild(el);
+			}
+
+			// get number of occurence of tower in dataset
+			let arrKey = "Tower";
+			 
+			function findOcc(arr, key){
+				let arr2 = [];
+				arr.forEach((x)=>{
+					// Checking if there is any object in arr2
+					// which contains the key value
+					if(arr2.some((val)=>{ return val[key] == x[key] })){
+						// If yes! then increase the occurrence by 1
+						arr2.forEach((k)=>{
+							if(k[key] === x[key]){
+								k["occurrence"]++
+								}
+								})
+						}else{
+							// If not! Then create a new object initialize
+							// it with the present iteration key's value and
+							// set the occurrence to 1
+							let a = {}
+							a[key] = x[key]
+							a["occurrence"] = 1
+							arr2.push(a);
+							}
+						})
+				
+				return arr2;
+			}
+
+			dataObjectCount = findOcc(dataset, arrKey);
+
+			// create div by number of towers
+			let towerContainer = d3.select("#towerContainer")
+							.append("svg")
+							.attr("width", towerWidth)
+							.attr("height", height)
+							.attr("overflow", "visible")
+							;
+
+			for (j=0; j<dataset.length; j++) {
+			  reportDates.push(dataset[j]['Start Date']);
+			}
+			// create scale for axis
+			let timeScale = d3.scaleTime().domain([new Date(d3.min(reportDates)), new Date(d3.max(reportDates))]).range([0,swimLanesWidth]).nice();
+			// create axis
+			let axisTop = d3.axisTop(timeScale);
+			// get list of all milestones
+			let taskList = [];
+			for (tsk=0;tsk<dataset.length; tsk++) {
+				taskList.push(dataset[tsk]['Unique Id'])
+			}
+
+			// create aggregator function
+
+			function groupBy(propName, computeAggregate, aggregateName){
+				return function (newArr, line){
+					const { [propName] : name, [aggregateName]: no} = line;
+					const totalInfo = newArr.find(item => item[propName] === name);
+					let occurrence = 0;
+					if(totalInfo) {
+						totalInfo[aggregateName] = computeAggregate(totalInfo[aggregateName], no);
+						} else {
+							const newTotalInfo = {[propName] : name, "Tower Rag":line['Tower Rag'], [aggregateName]: no, "occurrence":occurrence};
+							newArr.push(newTotalInfo);
+							}
+							return newArr;
+							}
+						}
+
+			function min (a, b) { 
+				return Math.min(a,b);
+				}
+
+
+			datasetGrouping = dataset.reduce(groupBy('Tower', min, 'Unique Id'), []);
+
+			for (g=0; g<datasetGrouping.length; g++) { if ( datasetGrouping[g]['Tower']  === dataObjectCount[g]['Tower']) {
+				datasetGrouping[g]['occurrence'] = dataObjectCount[g]['occurrence'];
+				}
+			}
+		
+
+			let linScale = d3.scaleLinear().domain(d3.extent(taskList)).range([0, height]);
+			// create tower container group
+			let towerGroup = towerContainer.selectAll("g")
+								.data(datasetGrouping)
+								.enter()
+								.append("g")
+								;
+			//create tower elements
+			let towerBox = towerGroup.append("rect")
+								.attr("id", function (d) {return d['tower']})
+								;
+
+				//totalCount = datasetGrouping.length;
+
+
+				towerBox.transition().delay(animateDelay).duration(animateDuration).ease(d3.easeBounceOut)
+								.attr("width",towerWidth)
+								.attr("height", function (d) {return  (height / totalCount) * d['occurrence']})
+								.attr("x", 0)
+								.attr("y", function (d, i) {return linScale(d['Unique Id'])})
+								.attr("stroke", "#ffffff")
+								.attr("stroke-width", "1px")
+								.attr("rx", "4px")
+								.attr("ry", "4px")
+								.attr("fill", function (d,i) {return d['Tower Rag']})
+								;
+
+				towerBox.append("title")
+								.text(function(d){return d['Tower']})
+								;
+
+
+			//create tower text
+			let towerText =	towerGroup.append("text")
+								.transition().delay(animateDelay).duration(animateDuration).ease(d3.easeBounceOut)
+								.attr("x", function(d) { return towerWidth/2;})
+								.attr("y", function (d,i){return linScale(d['Unique Id']) + ((height / totalCount) * d['occurrence'])/2})
+    							.attr("dy", ".35em")
+    							.style("text-anchor", "middle")
+								.text(function (d) {return d['Tower']})
+								.attr("fill", "#ffffff")
+								.style("font-size", 12)
+								;
+							
+
+			// create swimlanes
+			let swimLanes = d3.select("#swimLanes")
+								.append("svg")
+								.attr("width", swimLanesWidth)
+								.attr("height", height + (towerPadding * tower.length)-(2*towerPadding))
+								.attr("overflow", "visible")
+								;
+							
+			// show axis
+			//%d-%b-%y
+			//%Y-%m-%d
+			let milestoneDateAxis =  swimLanes.append("g")
+											.attr("id", "axs")
+											.transition().delay(animateDelay).duration(animateDuration).ease(d3.easeBounceOut)
+											.call(axisTop.tickFormat(d3.timeFormat("%d %b %Y")))
+											;
+
+			let task = swimLanes.append("g")
+								.selectAll("text")
+								.data(dataset)
+								.enter()
+								.append("text")
+								;
+
+				task.transition().delay(animateDelay*2.5).duration(animateDuration*2.5).ease(d3.easeBounceOut)
+								.attr("x", function(d) {return timeScale(d['Start Date']);} )
+								.attr("y", function(d) {return linScale(d['Unique Id']);} )
+								.attr("fill", function (d) {return d['Tower Rag']})
+								.attr("font-size", 8)
+								.attr("dy", "0.35em")
+								.text(function (d){return d['Milestone Icon']})
+								;
+								
+				task.append("title").text(function (d){return d['Task Nomenclature']})
+								;
+
+			let taskLabel = swimLanes.append("g")
+								.selectAll("text")
+								.data(dataset)
+								.enter()
+								.append("text")
+								.transition().delay(animateDelay*2.5).duration(animateDuration*2.5).ease(d3.easeBounceOut)
+								.attr("x",function(d) {return timeScale(d['Start Date']) + 5;} )
+								.attr("y",function(d) {return linScale(d['Unique Id']) + 2;} )
+								.attr("font-size", 8)
+								.text(function (d){return d['Task Nomenclature']})
+								.attr("fill",  function (d) {return d['Tower Rag']})
+								;
+
+			// add todays date reference line
+			let currentDate = new Date().toLocaleDateString("en-GB", "%Y %m %d");
+			// create current date reference line
+			let referenceLine = swimLanes.append("g")
+									.selectAll("line")
+									.data(dataset)
+									.enter()
+        							.append("line")
+        							;
+			// add reference line animation
+
+			referenceLine.transition().delay(animateDelay*1.5).duration(animateDuration*1.5).ease(d3.easeBounceOut)
+									.attr("x1",function (d) {return timeScale(d["Current Date"])})
+        							.attr("x2",function (d) {return timeScale(d["Current Date"])})
+        							.attr("y1",function (d) {return linScale(Math.min(...dataset.map(t => t['Unique Id'])))})
+        							.attr("y2",function (d) {return linScale(Math.max(...dataset.map(t => t['Unique Id'])))})
+        							.attr("fill","none")
+									.attr("stroke", "#EA0707")
+									.attr("stroke-width", 1.5)
+									.attr("stroke-dasharray",4)
+			;
+
+
+			referenceLine.append("title").text(currentDate);
+
+			let translateX = timeScale(new Date())-20; //padding
+			let translateY = linScale(Math.max(...dataset.map(t => t['Unique Id'])))/2;
+
+			let referenceText = swimLanes.append("g")
+									.append("text")
+									;
+
+				referenceText.transition().delay(animateDelay *1.5).duration(animateDuration*1.5).ease(d3.easeBounceOut)
+									.attr("fill", "#1f135d")
+									.attr("font-size", 8)
+									.attr("font-weight", "bold")
+									.attr("dy", ".35em")
+  									.attr("text-anchor", "middle")
+									.attr("transform", "translate("+translateX+","+translateY+")"+"rotate(-90)")
+									.text(currentDate)
+									;
+
+			// user input tower selection
+
+			let myTwrChoices = [];
+							
+			let twrSelect = document.getElementById("twr");
+				twrSelect.addEventListener("change", function handleChange(event) {
+					if(event.target.value === "all"){
+						myTwrChoices.length = 0;
+						for(twrS=1;twrS<twrSelect.length; twrS++){
+							myTwrChoices.push(twrSelect[twrS].value);
+							}
+					}else if (twrSelect.options[twrSelect.selectedIndex].selected && event.target.value !== "all") {
+						myTwrChoices.length = 0;
+						myTwrChoices.pop(-1);
+						myTwrChoices.push(event.target.value);
+					}
+				});
+
+
+
+			
+
+
+
+		});
+
+	</script>
+</body>
+</html>

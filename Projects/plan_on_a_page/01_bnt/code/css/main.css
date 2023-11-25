@@ -1,0 +1,65 @@
+body, select {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#container {
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows:repeat(5,minmax(60px, auto));
+    grid-gap:4px;
+    max-width: 1080px;
+    margin: 0 auto;
+
+}
+
+#header{
+    grid-column: 1 / 7;
+    text-align: center;
+    font-size:28px;
+    font-weight:bold;
+    color: #1f135d;
+
+}
+
+#header > span{
+    font-size:28px;
+    font-weight:normal;
+     color: silver;
+}
+
+.filterContainer {
+    grid-column:1 / 7;
+    grid-row:2 / 3;
+    margin: 0 auto;
+}
+
+table td {
+    text-align: center;
+    padding:2px;
+}
+
+.dropdown {
+    width:180px;
+}
+
+#towerContainer {
+    grid-column: 1 / 2;
+    grid-row: 4/ 5;
+    width:200px;
+}
+
+#swimLanes {
+    grid-column: 2 / 7;
+    grid-row: 4/ 5;
+}
+
+#axs {
+    font-family: 'Montserrat', sans-serif;
+    color: #1f135d;
+}
+
+#milestoneAxis{
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size:0px;
+    }

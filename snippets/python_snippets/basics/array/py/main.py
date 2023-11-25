@@ -34,3 +34,19 @@ print(myarray)
 
 del myarray[0]
 print(myarray)
+
+## string methods
+
+statement = "thebestarsenalis"
+""" print(statement[0:3])
+print(statement[3:7])
+print(statement[7:14])
+print(statement[14:16])
+ """
+print(statement[7:14].capitalize()+" "+statement[14:16]+" "+statement[0:3]+" "+ statement[3:7])
+
+## list comprehension example
+
+sequence = [1,2,3,4,5,6,7,8,9,10]
+sqs = [x**2 for x in sequence]
+print(sqs)

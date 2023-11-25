@@ -1,0 +1,35 @@
+Male Variables
+--------------
+
+
+Age = 18 to 35 
+Chad Rank:0 - 10
+Making Bank: 0 - 10
+Personality:0 - 10
+Crib:0 - 10
+Drip:0 - 10
+Whip: 0 - 10
+Body Count:
+High Value Status (SMV): 
+
+
+Female Variables
+-----------------
+
+
+Age = 18 to 35 
+Beauty Rank:0 - 10
+Making Bank: 0 - 10
+Personality:0 - 10
+Feminity Level: 0 - 10
+Fitness Level :0 - 10
+Cooperativeness:0 - 10
+Friendliness:0 - 10
+Trad Value:0 - 10
+/*
+Crib:0 - 10
+Drip:0 - 10
+Whip:0 - 10
+*/
+Body Count:0
+High Value Status (SMV):
