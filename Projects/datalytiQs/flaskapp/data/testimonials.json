@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Alana Luckraft",
+        "position":"Strategic Adviser, Executive Office",
+        "company": "London School of Hygiene & Tropical Medicine",
+        "abbreviation": "LSHTM",
+        "testimonial": "It was a pleasure to work with Damian on our project to develop a KPI dashboard to monitor progress with our new strategy. Damian is knowledgeable and experienced in all things Power BI and worked professionally, efficiently, and patiently to meet our requirements. The result was a comprehensive, high-quality and visually engaging dashboard for our stakeholders. I look forward to working with Damian again."
+    }
+    ,{
+        "id": 2,
+        "name": "Guy Pattison",
+        "position":"Senior Business Intelligence Analyst,Strategic Planning and Change",
+        "company": "Nottingham Trent University",
+        "abbreviation": "NTU",
+        "testimonial": "Damian provided exceptional technical knowledge and flexibility to deliver our ambitious project. He adapted to all our bespoke requirements and created out of the box and seamless solutions to any problems that arose throughout the development."
+
+    }
+    ,{
+        "id": 3,
+        "name": "Iaian Sherwell",
+        "position":"VP, Business Modeling, Reporting and Analytics",
+        "company": "Industrial & Financial Systems (IFS)",
+        "abbreviation": "IFS",
+        "testimonial": "Damian was a great team player. He got the balance if innovation and delivery spot on. He was good at managing expectations to ensure we delivered on time."
+
+    }
+    ,{
+        "id": 4,
+        "name": "Davoc Bradley",
+        "position":"IT, Security & Product Director",
+        "company": "Intercity Technology",
+        "abbreviation": "Intercity",
+        "testimonial": "The work performed revolutionised our ability to provide high quality, consistent BI to run the business; something we hadn't achieved in years was achieved in just 6 months, couldn't recommend Damian's work enough!"
+
+    }
+    ,{
+        "id": 5,
+        "name": "Cydnie Bedwell",
+        "position":"Head of Operations",
+        "company": "Bleep 360",
+        "abbreviation": "bleep360",
+        "testimonial": "Damian was hired to support our businesses with creating reports that allow us to instantly identify drops in performance, areas of high performance, trends and effective use of our CRM system. He's created this for us in a short period of time and has done so in a way that makes our reports universally understandable and quick to digest. From a business who have never had this type of data before, nor are we the techiest bunch, Damian has made this entire project seamless and simple, ensuring he explains it all to us along the way. I'd highly recommend hiring Damian to be a part of your team or to support you with a project- he's been a pleasure to have onboard"
+
+    }
+
+] 
