@@ -14,7 +14,16 @@
             <title>DatalytiQs</title>
         {% endif %}
     </head>
-    <body>       
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="{{ url_for('home') }}">DatalytiQs</a>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer></footer>
+
         <script src="" async defer></script>
     </body>
 </html>
