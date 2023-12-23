@@ -1,0 +1,22 @@
+--Oracle Home User
+
+OracleHomeUser
+$Pyramid7!
+
+Global Database Name
+orlc
+pwd
+$Pyramid7!
+
+Pluggable Database Name
+orclpdb
+
+
+URL Oracle Enterprise Manager
+https://localhost/5500/em
+
+DBMS_XDB_CONFIG.//getthttpsport()
+
+
+c##abisinfo
+

@@ -1,0 +1,26 @@
+
+
+bistudio
+$Pyramid7!
+
+-- no log on privildeges used for running all oracle srvices
+
+
+
+global database name (SID) orcl
+password:- $Pyramid7!
+
+sys or system (user administrator name)
+
+pluggable database name:- orclpdb
+
+
+fadahud
+oracle
+
+Oracle Enterprise Manager URL
+https://localhost:5500/em
+
+
+Create user c##datalytiqs_user identified by "$Getgood7!";
+GRANT create session, create table, create view, create synonym to c##datalytiqs_user;
