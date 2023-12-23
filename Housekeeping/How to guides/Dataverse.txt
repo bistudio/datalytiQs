@@ -1,0 +1,5 @@
+How to access the Dataverse
+
+https://tip.admin.powerplatform.microsoft.com/environments
+
+make.powerapps.com

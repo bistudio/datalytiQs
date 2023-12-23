@@ -1,0 +1,32 @@
+// create a new vite-project environment
+
+1. open terminal , cd to folder, then enter 
+
+	npm create vite@latest
+
+2. accept default project name vite-project or enter project name
+
+	vite-project
+3. accept default Vanilla or select required project type
+	
+	Vanilla
+
+4. accept default Typescript or select required language
+
+	Typescript
+
+5. cd to vite project folder
+
+	cd vite-project
+
+6. run npm installation
+
+	npm install
+
+7. start dev environment
+
+	npm run dev
+
+this will start http://localhost:5173 and create all the required dependencies (files, configs etc)
+
+8. launch new chrome window using localhost:5173

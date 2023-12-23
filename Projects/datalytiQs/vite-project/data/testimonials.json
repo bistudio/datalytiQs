@@ -1,4 +1,4 @@
-[
+{"testimonials":[
     {
         "id": 1,
         "name": "Alana Luckraft",
@@ -43,5 +43,13 @@
         "testimonial": "Damian was hired to support our businesses with creating reports that allow us to instantly identify drops in performance, areas of high performance, trends and effective use of our CRM system. He's created this for us in a short period of time and has done so in a way that makes our reports universally understandable and quick to digest. From a business who have never had this type of data before, nor are we the techiest bunch, Damian has made this entire project seamless and simple, ensuring he explains it all to us along the way. I'd highly recommend hiring Damian to be a part of your team or to support you with a project- he's been a pleasure to have onboard"
 
     }
-
-] 
+    ,{
+        "id": 6,
+        "name": "Paul King",
+        "position":"Head of Business Intelligence",
+        "company": "University of the West of England",
+        "abbreviation": "UWE",
+        "testimonial":"We have been fortunate enough to work with Damian over the last year or so and have found his approach and enthusiasm a breath of fresh air. Until we engaged with Damian we had struggled to find a Power BI specialist that was able to understand our needs fully, get to grips with our current data and turn that into reporting that we could rely on. His ability to understand quickly, and ask clarifying questions when needed, made it really easy to trust the process with him. Damian's is always clear when setting expectations and works through unexpected issues well. We have been so happy with his work that we continue to work with him and recommend him for work with our clients."
+    }
+]
+}

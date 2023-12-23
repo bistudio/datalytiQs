@@ -1,0 +1,12 @@
+https://slproweb.com/download/Win64OpenSSL_Light-3_1_2.exe
+
+cd to the location of openssl
+open powershell
+run ./openssl
+
+./openssl genrsa -aes256 -out localhost.key 2048r
+enter passphrase
+
+rightio
+
+openssl req -days 3650 -new -newkey rsa:2048 -key localhost.key -x509 -out localhost.pem
