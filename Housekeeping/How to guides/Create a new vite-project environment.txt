@@ -30,3 +30,7 @@
 this will start http://localhost:5173 and create all the required dependencies (files, configs etc)
 
 8. launch new chrome window using localhost:5173
+
+9. to build
+
+	npm run build

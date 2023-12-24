@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import render_template, request, redirect, url_for, flash, session
 
-app = Flask(__name__)
+from app import app
 
 @app.route('/')
 @app.route('/home')
@@ -22,7 +22,3 @@ def case_studies():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
