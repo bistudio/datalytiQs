@@ -1,0 +1,54 @@
+### setting up virtual environment using virtualenv
+
+1. Open a powershell terminal within VSCode and use this command to create a virtual environment. Attach this virtual environment to your workspace.
+
+		python -m venv .venv 
+
+2. Select the Python Interpreter 
+
+		Shift + Control + P to open the Command Palette and click on the Python: Select Interpreter.
+
+3. Activate the virtual environment.
+
+		.venv\Scripts\activate.ps1
+
+4. Install required libraries and complete your development.
+
+		Install all the required libraries (pip install -r requirements.txt) and complete your development (Build & Test). Once done, promote your changes to Git.
+
+5. To deactivate the virtual environment
+
+		use the command:deactivate
+
+6. To change the interpreter back to the Global one.
+
+		Shift + Control + P to open the Command Palette and click on the Python: Select Interpreter. Select the Global interpreter.
+
+7. To remove the virtual environment along with all the associated packages and dependencies.
+	
+		Remove the virtual environment using the command:rm -r .venv/
+
+
+Benefits of using a Virtual Environment
+
+Isolation: Virtual environments provide a sandboxed space to work in, where you can install and use packages and dependencies without affecting your system’s global Python installation or other projects on your machine.
+Version control: A virtual environment allows you to install specific versions of packages and libraries for your project, avoiding any conflicts or unexpected behavior caused by package updates or changes.
+Portability: Virtual environments make it easy to share your code and dependencies with others, as they can quickly set up a virtual environment with the same configuration as yours.
+Consistency: With a virtual environment, you can ensure that all developers working on a project use the same packages and dependencies, providing consistency in development and avoiding errors or conflicts caused by different package versions.
+Security: By keeping your project’s dependencies separate from your system-wide installation, you can avoid security vulnerabilities caused by outdated or incompatible packages.
+
+
+
+Flask Hot Reloading
+
+Set environment variables
+
+WINDOWS
+
+set FLASK_ENV=development
+set FLASK_APP=run.py
+
+MAC
+
+export FLASK_ENV=development
+export FLASK_APP=run.py
