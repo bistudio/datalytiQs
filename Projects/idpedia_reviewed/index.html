@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Information -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rightio Data Idpedia</title>
+    <meta name="description" content="Making Sense of Our Data at Rightio">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dist/bootstrap.min.css" crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+
+    <!-- Scripts -->
+    <script src="assets/js/dist/bootstrap.js"></script>
+    <script defer src="assets/js/dist/bootstrap.bundle.js"></script>
+    <script src="assets/js/main.js" type="module" defer></script>
+</head>
+
+<body class="grid-container">
+
+    <!-- Header Section -->
+    <header class="page-title-holder">
+        <h1 class="page-title">Business Idpedia</h1>
+        <h2 class="page-subtitle">Making Sense of Our Data</h2>
+    </header>
+
+    <!-- Logo -->
+    <img src="assets/img/rightio logo blue.png" alt="Rightio Logo" class="logoHolder">
+
+    <!-- User Guide -->
+    <section class="user-guide">
+        <article>
+            <h2 class="page-subtitle">Business Glossary</h2>
+            <!-- Guide content here -->
+            <p>
+                A business glossary is a tool for organizing and standardizing the language used in an organization
+                across people, processes, and tools.
+                It provides a common understanding of business terms across the organization,
+                and helps people to use and interpret business data consistently, so they can make better business
+                decisions.
+            </p>
+            <p>
+                This business glossary ensures that the list of business terms and definitions used within the
+                various sets of reporting suite is the same across the board company-wide when analyzing data.
+                It is meant to provide a common business vocabulary, used by everyone throughout Rightio.
+            </p>
+            <p>
+                There are supplementary information that can help further the understanding and definition of each
+                business term, such as technical properties, usage, source system and related terms.
+            </p>
+            <p>
+                To use this tool, please enter a search term in the search box, then from the search result dialogue
+                box, click on the required business term from the result options;
+            </p>
+            <p>
+                The table below will be populated with all relevant information about the business term. The default
+                display view is the business glossary table for the selected data item,
+                however it is possible to view the data warehouse technical objects and the source system where the
+                data item originated from.
+                Select one of the links above the result table below to show the required view.
+            </p>
+        </article>
+    </section>
+
+    <!-- Navigation Links -->
+    <!-- <div class="navigation"> -->
+        <div class="text-logo-holder">
+            <img src="assets/img/texticon.png" alt="Text Logo">
+            <a href="#" id="business-glossary-link">Business Glossary</a>
+        </div>
+        <div class="db-logo-holder">
+            <img src="assets/img/databaseicon.png" alt="Database Logo">
+            <a href="#" id="data-warehouse-link">Data Warehouse</a>
+        </div>
+        <div class="ss-logo-holder">
+            <img src="assets/img/sourcesystem.png" alt="Source System Logo">
+            <a href="#" id="source-system-link">Source System</a>
+        </div>
+    <!-- </div> -->
+
+    <!-- Main Content -->
+    <main class="term-def-holder">
+        <!-- Tables for Business Glossary, Data Warehouse, and Source System -->
+        <table id="tbl-business-gloss" class="table table-stripped">
+            <thead>
+                <tr>
+                    <th colspan="1">Business Glossary Id</th>
+                    <th colspan="1">Business Glossary Name</th>
+                    <th colspan="1">Business Definition</th>
+                    <th colspan="1">Business Category</th>
+                    <th colspan="1">Related Term</th>
+                    <th colspan="1">Business Glossary Notes</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <table id="tbl-data-warehouse" class="hidden table table-stripped">
+            <thead>
+                <tr>
+                    <th colspan="1">Database</th>
+                    <th colspan="1">Data Table</th>
+                    <th colspan="1">Data Column</th>
+                    <th colspan="1">Data Type</th>
+                    <th colspan="1">Data Expression</th>
+                    <th colspan="1">Data Expression Type</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        </table>
+        <table id="tbl-source-system" class="hidden table table-stripped">
+            <thead>
+                <tr>
+                    <th colspan="1">Source System</th>
+                    <th colspan="1">Source Table</th>
+                    <th colspan="1">Source Column</th>
+                    <th colspan="1">Source Data Type</th>
+                    <th colspan="1">Source Expression</th>
+                    <th colspan="1">Source Expression Type</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <label for="selected-item">Search Term:</label>
+        <input type="text" list="search-term" id="selected-item" placeholder="Search for a term">
+        <datalist id="search-term"></datalist>
+    </div>
+
+</body>
+
+</html>

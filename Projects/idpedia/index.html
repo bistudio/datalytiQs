@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            Rightio Data Idpedia
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/dist/bootstrap.min.css" crossorigin="anonymous">
+        <link rel="shortcut icon" href="#">
+        <script src="assets/js/dist/bootstrap.js"></script>
+        <script defer src="assets/js/dist/bootstrap.bundle.js"></script>
+        <script defer src="assets/js/main.js"></script>
+    </head>
+    <body class="grid_container">
+        <header class="pageTitleHolder">
+            <div>
+                <h1 class="pageTitle">Business Idpedia</h1>
+            </div>
+            <div>
+                <h2 class="pageSubtitle">Making Sense of Our Data</h2>
+            </div>
+        </header>
+        <img src="assets/img/rightio logo blue.png" alt="Rightio Logo" class="logoHolder">
+        <section class="userGuide">
+            <div>
+                <article>
+                    <h2 class="pageSubtitle">Business Glossary</h2>
+                    <p>
+                        A business glossary is a tool for organizing and standardizing the language used in an organization across people, processes, and tools.
+                        It provides a common understanding of business terms across the organization, 
+                        and helps people to use and interpret business data consistently, so they can make better business decisions.
+                    </p>
+                    <p>
+                        This business glossary ensures that the list of business terms and definitions used within the various sets of reporting suite is the same across the board company-wide when analyzing data.
+                        It is meant to provide a common business vocabulary, used by everyone throughout Rightio.
+                    </p>
+                    <p>
+                        There are supplementary information that can help further the understanding and definition of each business term, such as technical properties, usage, source system and related terms.
+                    </p>
+                    <p>
+                        To use this tool, please enter a search term in the search box, then from the search result dialogue box, click on the required business term from the result options;
+                    </p>
+                    <p>
+                        The table below will be populated with all relevant information about the business term. The default display view is the business glossary table for the selected data item, 
+                        however it is possible to view the data warehouse technical objects and the source system where the data item originated from. 
+                        Select one of the links above the result table below to show the required view.
+                    </p>
+                </article>
+            </div>
+        </section>
+        <div class="textLogoHolder">
+            <img src="assets/img/texticon.png" alt="Text Logo">
+            <a href="#" id="businessGlossaryLink">Business Glossary</a>
+        </div>
+        <div class="dbLogoHolder">
+            <img src="assets/img/databaseicon.png" alt="database Logo">
+            <a href="#" id="dataWarehouseLink">Data Warehouse</a>
+        </div>
+        <div class="ssLogoHolder">
+            <img src="assets/img/sourcesystem.png" alt="source system Logo">
+            <a href="#" id="sourceSystemLink">Source System</a>
+        </div>
+        <main class="termDefHolder">
+            <table id="tbl_business_gloss" class="table table-stripped">
+                <thead>
+                    <tr>
+                        <th colspan="1">Business Glossary Id</th>
+                        <th colspan="1">Business Glossary Name</th>
+                        <th colspan="1">Business Definition</th>
+                        <th colspan="1">Business Category</th>
+                        <th colspan="1">Related Term</th>
+                        <th colspan="1">Business Glossary Notes</th>
+                    </tr>
+                </thead>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <table id="tbl_data_warehouse" class="hidden table table-stripped">
+                    <thead>
+                        <tr>
+                            <th colspan="1">Database</th>
+                            <th colspan="1">Data Table</th>
+                            <th colspan="1">Data Column</th>
+                            <th colspan="1">Data Type</th>
+                            <th colspan="1">Data Expression</th>
+                            <th colspan="1">Data Expression Type</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </table>
+                <table id="tbl_source_system" class="hidden table table-stripped">
+                    <thead>
+                        <tr>
+                            <th colspan="1">Source System</th>
+                            <th colspan="1">Source Table</th>
+                            <th colspan="1">Source Column</th>
+                            <th colspan="1">Source Data Type</th>
+                            <th colspan="1">Source Expression</th>
+                            <th colspan="1">Source Expression Type</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>                     
+                    </table>
+                </main>
+                <div class="searchBox">
+                    <label for="selectedItem">Search Term:</label>
+                    <div style="display:inline">
+                        <input type="text" list="searchTerm" id="selectedItem" placeholder="search for a term">
+                        <button id="clearButton" class="btn btn-primary">Reset</button>
+                    </div>
+                    <datalist id="searchTerm"></datalist>
+                </div>
+                
+    </body>
+</html>
