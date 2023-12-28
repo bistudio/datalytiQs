@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+body {
+    width: 1430px;
+    margin: 0 auto;
+    font: 1.2rem/1.4 Verdana, serif;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* primary header */
+
+  .primary-header {
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+    height: 120px;
+    position: sticky;
+    top: 2px;
+    background: #f7f7f7;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 1em #ccc;
+    border: 1px solid #ccc;
+  }
+
+ .primary-header__logo img{
+    width: 100px;
+    height: 100px;
+    margin: 0.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+  }
+
+  .primary-navigation{
+    list-style: none;
+  }
+
+  .primary-header a{
+    text-decoration: none;
+}
+
+  .flex{
+    display: flex;
+    gap:var(--gap, 2rem);
+
+  }
+
+  .call-to-action{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1em;
+    text-decoration: none;
+    list-style: none;
+    border-radius: 20px;
+    background: #1f135d;
+    box-shadow: 0 0 1em #ccc;
+    border: 1px solid #ccc;
+    padding: 0.5em 1em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+  }
+
+  .call-to-action a{
+    color: #fff;
+  }
+
+  a{
+    text-decoration: none;    
+    color: #1f135d;
+}
+
+li.active{
+    color: #1f135d;
+    font-weight: bold;
+}
+
+/* main section */
+
+
+  .cls-main{
+    height:1430px
+  }
+
+  .section-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top:10px;
+    justify-content: center ;
+    align-items: center;
+  }
+
+
+  .section__nomenclature{
+    display: flex;
+    margin:5px;
+    padding: 0;
+    width: 20%;
+    min-height:660px;
+    background: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: 0 0 1em #ccc;
+    border: 1px solid #ccc;
+    justify-content: center ;
+    align-items: center;
+
+  }
+
+  .section__showcase{
+    display: flex;
+    margin:5px;
+    padding: 0;
+    width: 80%;
+    min-height:660px;
+    background: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: 0 0 1em #ccc;
+    border: 1px solid #ccc;
+    justify-content: center ;
+    align-items: center;
+  }
+
+  .section{
+    margin: 0 auto;
+  }
+
+  /* testimonials */
+
+  .testimonial-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    border-radius: 20px;
+    justify-content: center ;
+  }
+
+.testimonial{
+    display: flex;
+    margin:5px;
+    width: 250px;
+    min-height:800px;
+    background: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: 0 0 1em #ccc;
+    border: 1px solid #ccc;
+    justify-content: center ;
+    align-items: center;
+}
+
+.testimonial img{
+    width: 50%;
+    object-fit: cover;
+    margin-bottom: 1em;
+    padding: 1rem;
+}
+
+.testimonial__figure {
+    margin: 0.4em;
+    background: #eee;
+    border-radius: 20px;
+    height: 98%;
+    max-width: 600px;
+  }
+
+.testimonial__figure figcaption,
+.testimonial__figure blockquote {
+  margin: 1em;
+}
+
+.testimonial__name{
+    font-size: 1.0rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+.testimonial__content{
+    width:100%;
+    height: 100%;
+    font-size: 0.9rem;
+}
+
+/* footer */
+
+.primary-footer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 1430px;
+    height: 10%;
+    align-items: center;
+    bottom: 1px;
+    background: #f7f7f7;
+    border-radius:0 0 20px 20px;
+    box-shadow: 0 0 1em #ccc;
+    border: 1px solid #ccc;
+    padding-top:5px
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+    border-radius: 20px;
+    justify-content: right ;
+    align-items: center;
+}
+
+.footer-container__links ul{
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer-container__links img{
+    width: 30px;
+    height: 30px;
+    margin-right:10px;
+}
+
+.footer-container__links ul{
+    margin: 0 1em;
+    text-decoration: none;
+    color: #000;
+    list-style: none;  
+}
+
+/* copy right */
+
+.copyright{
+    padding-bottom:5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #000;
+    
+}

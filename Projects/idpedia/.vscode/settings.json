@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.https": {
+      "enable": false,
+      "cert": "C:/Users/damian.fadahunsi/Rightio Data Platform/00_documentation/01_data dictionary/idpedia/certificates/localhost.pem",
+      "key": "C:/Users/damian.fadahunsi/Rightio Data Platform/00_documentation/01_data dictionary/idpedia/certificates/localhost.key",
+      "passphrase": "rightio"
+    }
+}
