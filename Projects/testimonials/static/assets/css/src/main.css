@@ -222,6 +222,7 @@ li.active{
 .footer-container__links img{
     width: 30px;
     height: 30px;
+    margin-top:20px;
     margin-right:10px;
 }
 

@@ -7,7 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/src/main.css')}}">
+        <script type="text/javascript" src="{{url_for('static', filename='assets/js/dist/d3.v7.min.js')}}" async defer></script>
         <script type="text/javascript" src="{{url_for('static', filename='assets/js/src/main.js')}}" async defer></script>
+        <script type="text/javascript" src="{{url_for('static', filename='assets/js/src/navLinks.js')}}" ></script>
+        <script type="text/javascript" src="{{url_for('static', filename='assets/js/src/structure.js')}}" async defer></script>
+        <link rel="shortcut icon" href="#">
 
         {% if title %}
             <title>DatalytiQs - {{ title }}</title>
@@ -16,29 +20,49 @@
         {% endif %}
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                
-                <img src="{{url_for('static', filename='assets/img/DatalytiQs - Balgin Expanded Large.png')}}" alt="logo" class="logo">
+        <header class="primary-header flex">
+            <div class="primary-header__logo">
+                <a href="https://www.datalytiQs.io"><img src="static/assets/img/DatalytiQS - Balgin Expanded Large.png" alt="datalytiQs" /></a>
+            </div>
+            <nav>
+                <ul id="primary-navigation" class="primary-navigation flex">
+                    <li class="active"><a href="{{url_for('home')}}">Home</a></li>
+                    <li><a href="{{ url_for('client_work')}}">Client Work</a></li>
+                    <li><a href="{{ url_for('projects')}}">Projects</a></li>
+                    <li><a href="{{ url_for('case_studies')}}">Case Studies</a></li>
+                    <li><a href="{{ url_for('blogs')}}">Blogs</a></li>
+                </ul>
+            </nav>
+            <div class="call-to-action">
+                <a href="{{ url_for('contact')}}">Contact Us</a>
+            </div>
         </header>
-        <main>
+            
             {% block content %}{% endblock %}
-        </main>
-        <div id="carosel-container">
-            <div id="div-1" class="testimonial-div"></div>
-            <div id="div-2" class="testimonial-div"></div>
-            <div id="div-3" class="testimonial-div"></div>
-            <div id="div-4" class="testimonial-div"></div>
-            <div id="div-5" class="testimonial-div"></div>
-            <div id="div-6" class="testimonial-div"></div>
-            <div id="div-7" class="testimonial-div"></div>
-            <div id="div-8" class="testimonial-div"></div>
-            <div id="div-9" class="testimonial-div"></div>
 
-        </div>
-        <footer></footer>
 
-        <script src="" async defer></script>
+        
+        <footer class="primary-footer">
+            <div class="footer-container">
+                <div class="footer-container__logo">
+                    
+                </div>
+                <div class="footer-container__links">
+                    <ul>
+                        <li><a href="mailto:io@datalytiQs.io"><img src="static/assets/img/email_icon_black.png" alt="Contact Us"/></a></li>
+                        <li><a href="https://wa.me/message/BXNPVTOJOVLQH1"><img src="static/assets/img/whatsapp logo_black.png" alt="Whatsapp"/></a></li>
+                        <li><a href="#"><img src="static/assets/img/twitter_icon_black.png" alt="Twitter (x)"/></a></li>
+                        <li><a href="https://www.youtube.com/@datalytiQsio"><img src="static/assets/img/youtube logo_black.png" alt="Youtube"/></a></li>
+                        <li><a href="#"><img src="static/assets/img/linkedin logo_black.png" alt="LinkedIn"/></a></li>
+                        <li><a href="#"><img src="static/assets/img/instagram logo_black.png" alt="Instagram"/></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy; 2023 DatalytiQs.io All rights reserved</p>
+            </div>
+        </footer>
+
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
