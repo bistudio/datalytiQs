@@ -1,9 +1,8 @@
 from flask import render_template, request, redirect, url_for, flash, session, send_from_directory
-from app import app
+from app import app, db
 from app.forms import ContactForm
-import config
+from app.models import Contact
 
-app.config['SECRET_KEY'] = config.SECRET_KEY
 
 @app.route('/get_json_data')
 def get_json_data():
@@ -31,10 +30,28 @@ def case_studies():
 def blogs():
     return render_template('blogs.html', title='Blogs')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    form = ContactForm()
+    form = ContactForm(request.form)
     if form.validate_on_submit():
+        username = form.your_name.data
+        email = form.email_address.data
+        message = form.message.data
+        # create a new user record in the database
+        contact = Contact(username, email, message)
+        db.session.add(contact)       
+        # commit all changes to the database
+        db.session.commit()
         flash('Thanks {}, we have received your message!'.format(form.your_name.data))
-        return redirect(url_for('home'))
+        #return redirect(url_for('home'))
+    else:
+        # show validaton errors
+        # see https://pythonprogramming.net/flash-flask-tutorial/
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash("Error in {}: {}".format(
+                    getattr(form, field).label.text,
+                    error
+                ), 'error')
+        return render_template('contact.html', form=form)
     return render_template('contact.html', title='Contact', form=form)

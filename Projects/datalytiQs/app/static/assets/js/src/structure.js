@@ -8,3 +8,6 @@ const canvas = d3.select(".section__showcase")
                 .attr("height", height);
 
 console.log(canvas);
+
+
+
