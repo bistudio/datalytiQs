@@ -31,6 +31,7 @@ body {
     margin: 0.8rem;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 1px 1px 3px black;
 
   }
 
@@ -57,11 +58,12 @@ body {
     list-style: none;
     border-radius: 20px;
     background: #1f135d;
-    box-shadow: 0 0 1em #ccc;
-    border: 1px solid #ccc;
+    box-shadow: 1px 1px 3px black;
+    border: 1px solid #1f135d;
     padding: 0.5em 1em;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: regular;
+    
   }
 
   .call-to-action a{
@@ -333,4 +335,60 @@ li.active{
     margin-right: 0.5em!important;
     background: #1f135d!important;
     border-color: #1f135d!important;
+  }
+
+  .businessman{
+    object-fit: cover;
+    height: 150px;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+    animation: fillupman 3s ease-in-out;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    filter: invert(7%) sepia(10%) saturate(2550%) hue-rotate(200deg) brightness(20%) contrast(10%)
+            blur(0px) drop-shadow(3px 3px 5px black) grayscale(0%) opacity(20%);
+  }
+
+  .business_woman{
+    object-fit: cover;
+    height: 150px;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+    animation: fillup 3s ease-in-out;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    /*
+    filter: invert(62%) sepia(610%) saturate(6057%) hue-rotate(163deg) brightness(97%) contrast(104%)
+            blur(0px) drop-shadow(3px 3px 5px black) grayscale(10%) opacity(50%);
+    */
+    filter: invert(7%) sepia(90%) saturate(2652%) hue-rotate(245deg) brightness(105%) contrast(104%)
+            blur(0px) drop-shadow(3px 3px 5px black) grayscale(10%) opacity(100%);
+  }
+
+  @keyframes fillupman {
+
+    from {
+      filter: invert(7%) sepia(9%) saturate(2550%) hue-rotate(200deg) brightness(20%) contrast(10%)
+            blur(0px) drop-shadow(3px 3px 5px black) grayscale(0%) opacity(20%);
+    }
+
+    to {
+    filter: invert(7%) sepia(9%) saturate(2652%) hue-rotate(245deg) brightness(105%) contrast(104%)
+            blur(0px) drop-shadow(3px 3px 5px black) grayscale(10%) opacity(100%);
+    }
+    
+  }
+
+  @keyframes fillup {
+
+    from {
+      filter: invert(7%) sepia(90%) saturate(2550%) hue-rotate(200deg) brightness(100%) contrast(100%)
+            blur(0px) drop-shadow(3px 3px 5px black) grayscale(0%) opacity(20%);
+    }
+
+    to {
+    filter: invert(7%) sepia(90%) saturate(2652%) hue-rotate(245deg) brightness(105%) contrast(104%)
+            blur(0px) drop-shadow(3px 3px 5px black) grayscale(10%) opacity(100%);
+    }
+    
   }

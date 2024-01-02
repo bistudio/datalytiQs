@@ -1,49 +1,24 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<!-- <div class="contactform-container flex" >
-    <div class="contactform-info">
-        <h2>Get in touch</h2>
-        <p>Fill in the form to send us a message:</p>
-    </div>
-    <form action="/contact" class="contactform__message">
-        <div class="form-floating mb-3">
-            <label for="floatingInput">Your Name</label>
-            <input type="text" class="form-control" id="floatingInput" placeholder="Name">
-        </div>
-        <div class="form-floating mb-3">
-            <label for="floatingInput">Email address</label>
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Your message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="9"></textarea>
-        </div>
-        <div class="contactform-button-container">
-            <button type="reset" class="btn btn-primary">Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
-</div> -->
-
 <div class="contactform-container flex">
     <div class="contactform-info">
         <h2>Get in touch</h2>
         <p>Fill in the form to send us a message:</p>
     </div>
-    <form action="/contact" class="contactform__message">
+    <form action="{{url_for('contact')}}" method="POST" class="contactform__message">
         {{ form.csrf_token }}
         <div class="form-floating mb-3">
             {{ form.your_name.label }}
-            {{ form.your_name(class="form-control", id="floatingInput", placeholder="Name") }}
+            {{ form.your_name(class="form-control", id="floating-input-username", placeholder="Name") }}
         </div>
         <div class="form-floating mb-3">
             {{ form.email_address.label }}
-            {{ form.email_address(class="form-control", id="floatingInput", placeholder="name@example.com") }}
+            {{ form.email_address(class="form-control", id="floating-input-email", placeholder="name@example.com") }}
         </div>
         <div class="mb-3">
             {{ form.message.label }}
-            {{ form.message(class="form-control", id="exampleFormControlTextarea1" ,rows="9")}}
+            {{ form.message(class="form-control", id="form-control-textarea" ,rows="9")}}
         </div>
         <div>
             <button id="clear-form" type="reset" value="reset" class="btn btn-primary cls-btn">Reset</button>
