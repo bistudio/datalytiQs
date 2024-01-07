@@ -9,6 +9,11 @@ def get_json_data():
     json_file_path = './data/testimonials.json'
     return send_from_directory(app.root_path, json_file_path, as_attachment=True)
 
+@app.route('/gender_paygap_json_data')
+def gender_paygap_json_data():
+    json_file_path = './data/gender_pay_gap.json'
+    return send_from_directory(app.root_path, json_file_path, as_attachment=True)
+
 @app.route('/')
 @app.route('/home')
 def home():
@@ -43,7 +48,7 @@ def contact():
         # commit all changes to the database
         db.session.commit()
         flash('Thanks {}, we have received your message!'.format(form.your_name.data))
-        #return redirect(url_for('home'))
+        return redirect(url_for('home'))
     else:
         # show validaton errors
         # see https://pythonprogramming.net/flash-flask-tutorial/
