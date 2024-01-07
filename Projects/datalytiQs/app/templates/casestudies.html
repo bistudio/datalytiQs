@@ -2,11 +2,30 @@
 {% block content %}
 
 <main id="casestudies"> 
-    <div class="section-container">
-        <div class="section__nomenclature"></div>
-        <div class="section__showcase">
-            <img class="businessman" src="{{url_for('static', filename='assets/img/businessman.png')}}" alt="businessman" />
-            <img class="business_woman" src="{{url_for('static', filename='assets/img/business_woman.png')}}" alt="business_woman"/>
+    <div class="casestudies__section-container">
+        <div class="casestudies__section__nomenclature section_nomenclature--body">
+            <h5 class="casestudies__section__nomenclature__title">Gender Pay Gap</h5>
+            <p class="casestudies__section__nomenclature__description">A concise summary of the April 2023 median gender pay gap using 
+                <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/genderpaygapintheuk/2023">ONS</a> 
+                data, illustrated through a unique visual approach in 9 key job categories.</p>
+                <h6>Approach</h6>
+                <p>
+                    Using python and pandas, the data was cleaned and prepared for use in D3.js, which in turn was used to create a visualisation of the data and then rendered using python and flask.
+                </p>
+        </div>
+        <div class="casestudies__section__showcase">
+            <div id="gender-pay-gap" class="gender-pay-gap-container">
+                <h4 id="gender-pay-gap-title">Gender Pay Gap by Occupation</h4>
+                <div id="gender-pay-gap-filter">
+                    <label for="select-work-type" class="work-type-label">Work Type</label>
+                    <select id="select-work-type" class="casestudies__work-type">
+                        <option value="All" selected>All</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Fart Time">Part Time</option>
+                    </select>
+                </div>
+                <div id="casestudies-d3-canvas"></div>
+            </div>
         </div>
     </div>
     

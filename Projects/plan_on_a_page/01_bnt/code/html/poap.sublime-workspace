@@ -1,0 +1,410 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"st",
+				"stop_time"
+			],
+			[
+				"dataset",
+				"dataset.length"
+			],
+			[
+				"towerCo",
+				"towerCount"
+			],
+			[
+				"data",
+				"datasetGrouping"
+			],
+			[
+				"dat",
+				"datasetGrouping"
+			],
+			[
+				"datas",
+				"datasetGrouping"
+			],
+			[
+				"towerC",
+				"towerCount"
+			],
+			[
+				"prop",
+				"propName"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"o",
+				"occurence"
+			],
+			[
+				"refere",
+				"referenceText"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"trans",
+				"translateY"
+			],
+			[
+				"tra",
+				"translateX〔variable〕"
+			],
+			[
+				"Curr",
+				"Current Date"
+			],
+			[
+				"lin",
+				"linScale"
+			],
+			[
+				"task",
+				"taskLabel"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"tas",
+				"taskList"
+			],
+			[
+				"select",
+				"selectAll"
+			],
+			[
+				"Start",
+				"startDate"
+			],
+			[
+				"stroke",
+				"stroke-dashoffset"
+			],
+			[
+				"1",
+				"10px"
+			],
+			[
+				"selec",
+				"selectAll"
+			],
+			[
+				"swimL",
+				"swimLanes"
+			],
+			[
+				"re",
+				"reportDates"
+			],
+			[
+				"grid-ro",
+				"grid-template-rows"
+			],
+			[
+				"text",
+				"text-anchor"
+			],
+			[
+				"grid",
+				"grid-column"
+			],
+			[
+				"margin",
+				"margin: 0"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"towe",
+				"towerCount"
+			],
+			[
+				"tow",
+				"towerCount"
+			],
+			[
+				"fin",
+				"findOcc"
+			],
+			[
+				"reso",
+				"resourceName"
+			],
+			[
+				"mileston",
+				"milestoneStatus"
+			],
+			[
+				"mile",
+				"milestoneStatusObjArr"
+			],
+			[
+				"milestoneL",
+				"milestoneLevel"
+			],
+			[
+				"tower",
+				"towerObjArr"
+			],
+			[
+				"docume",
+				"document.write"
+			],
+			[
+				"t",
+				"type"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"vmen",
+				"View: Toggle Minimap"
+			],
+			[
+				"Package control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Upgrade All Packages"
+			],
+			[
+				"Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"Add Res",
+				"Package Control: Add Repository"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"kite",
+				"Package Control: Install Package"
+			],
+			[
+				"material theme",
+				"Material Theme: Configuration"
+			],
+			[
+				"copilot",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"",
+				"Kite: Open Copilot"
+			],
+			[
+				"codeintel",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"mater",
+				"Material Theme: Advanced configuration"
+			],
+			[
+				"sublie co",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"Copilot",
+				"Kite: Open Copilot"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 355.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/bistu/datalytiQs/snippets/js_snippets/index.html",
+		"/C/Users/bistu/datalytiQs/Projects/datalytiQs/test.py",
+		"/C/xampp/d3/WDI/01_bnt/code/html/wdi.html",
+		"/C/Users/bistu/Business Intelligence Workspace/d3/WDI/01_bnt/code/html/wdi.html",
+		"/C/Users/bistu/Business Intelligence Workspace/d3/Plan on a Page/01_bnt/code/html/poap.html",
+		"/C/Users/bistu/AppData/Roaming/Sublime Text 3/Packages/View In Browser/View In Browser.sublime-settings",
+		"/C/Users/bistu/AppData/Roaming/Sublime Text 3/Packages/User/View In Browser.sublime-settings",
+		"/C/Users/bistu/AppData/Local/Temp/kite_tutorial.py"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 52.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "poap.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 297.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
